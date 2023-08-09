@@ -41,7 +41,7 @@ namespace Treinar.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ClienteModels");
+                    b.ToTable("ClienteModels", (string)null);
                 });
 #pragma warning restore 612, 618
         }

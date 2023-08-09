@@ -1,0 +1,38 @@
+@model IEnumerable<Treinar.Data.ClienteDbContext.Entidades.Cliente>
+
+@{
+    ViewBag.Title = "Clientes";
+}
+
+<h2>Listas Clientes</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdadeDoCliente)
+        </th>
+        <th></th>
+    </tr>
+</table>
+
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdadeDoCliente)
+        </td>
+    </tr>
+}

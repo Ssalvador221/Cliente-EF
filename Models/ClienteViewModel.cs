@@ -1,9 +1,10 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using Treinar.Data.ClienteDbContext.Entidades;
 
 namespace Treinar.Models;
 
-public class ClienteViewModel
+public class ClienteViewModel : Cliente
 {
 
     [Required(ErrorMessage = "Por Favor insira seu primeiro Nome!")]
@@ -16,5 +17,7 @@ public class ClienteViewModel
     
     [Required(ErrorMessage = "Por Favor insira sua Idade!")]
     [DisplayName("Idade")]
-    public int Idade { get; set; }
+    public DateTime Idade { get; set; }
+    
+    
 }
