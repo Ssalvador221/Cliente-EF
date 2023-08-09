@@ -18,6 +18,7 @@
 
     <ItemGroup>
       <Compile Remove="Data\ClienteDbContext\Entidades.cs" />
+      <Compile Remove="Views\Cliente\Create.cs" />
     </ItemGroup>
 
 </Project>
