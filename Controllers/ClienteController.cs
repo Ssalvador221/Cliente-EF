@@ -1,8 +1,7 @@
-using System.Net;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Treinar.Data.ClienteDbContext;
-using Treinar.Data.ClienteDbContext.Entidades;
+using Treinar.Data.Entidades;
 using Treinar.Models;
 
 namespace Treinar.Controllers;
@@ -10,12 +9,12 @@ namespace Treinar.Controllers;
 public class ClienteController : Controller
 {
     private readonly ClienteDbContext _context;
-    
-    
-    
-    public ClienteController(ClienteDbContext context)
+    private readonly IMapper _mapper;
+
+    public ClienteController(ClienteDbContext context, IMapper mapper)
     {
         _context = context;
+        mapper = _mapper;
     }
 
     public IActionResult Index()
@@ -25,33 +24,53 @@ public class ClienteController : Controller
 
     public IActionResult CadastroCliente()
     {
-        ClienteViewModel model = new()
+        var viewModel = new CadastroCompletoViewModel();
+        viewModel.CepClienteViewModel = new CepClienteViewModel()
         {
-            Id = Guid.NewGuid()
+            CepClienteViewModelId = Guid.NewGuid()
         };
 
-        return View(model);
+        return View(viewModel);
     }
+    
 
     [HttpPost]
-    public async Task<IActionResult> CadastroCliente(ClienteViewModel model)
+    public async Task<IActionResult> CadastroCliente(CadastroCompletoViewModel model)
     {
         if (!ModelState.IsValid)
         {
             return View(model);
         }
-
-        Cliente clienteModels = new()
+        
+        var clienteModel = new ClienteViewModel();
+        clienteModel = new ClienteViewModel()
         {
-            FirstName = model.FirstName,
-            LastName = model.LastName,
-            Idade = model.Idade
+            CepClienteId = clienteModel.CepClienteId
+        };
+        
+        
+        Cliente cliente = new()
+        {
+            FirstName = model.ClienteViewModel.FirstName,
+            LastName = model.ClienteViewModel.LastName,
+            Idade = model.ClienteViewModel.Idade,
         };
 
-        await _context.ClienteModels.AddAsync(clienteModels);
+        CepCliente cepModels = new()
+        {
+            cep = model.CepClienteViewModel.Cep,
+            state = model.CepClienteViewModel.State,
+            city = model.CepClienteViewModel.City,
+            neighborhood = model.CepClienteViewModel.Neighborhood,
+            street = model.CepClienteViewModel.Street
+        };
+
+        
+        await _context.CepCliente.AddAsync(cepModels);
+        await _context.ClienteModels.AddAsync(cliente);
         await _context.SaveChangesAsync();
 
-        return RedirectToAction(nameof(Index));
+        return RedirectToAction(nameof(Index), clienteModel);
     }
 
    /* public IActionResult Details()

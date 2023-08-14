@@ -1,6 +1,4 @@
-using Treinar.Models;
-
-namespace Treinar.Data.ClienteDbContext.Entidades;
+namespace Treinar.Data.Entidades;
 
 public class Cliente
 {
@@ -20,5 +18,8 @@ public class Cliente
             age = age - 1;
         return age;
     } }
+
+    public Guid? CepClienteId { get; set; }
+    public CepCliente? CepCliente { get; set; }
 
 }

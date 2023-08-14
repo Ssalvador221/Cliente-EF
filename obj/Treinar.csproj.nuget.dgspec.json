@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\joaos\\RiderProjects\\Treinar\\Treinar\\Treinar.csproj": {}
+    "C:\\Users\\Usuario\\RiderProjects\\Treinando-EF\\Treinar.csproj": {}
   },
   "projects": {
-    "C:\\Users\\joaos\\RiderProjects\\Treinar\\Treinar\\Treinar.csproj": {
+    "C:\\Users\\Usuario\\RiderProjects\\Treinando-EF\\Treinar.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\joaos\\RiderProjects\\Treinar\\Treinar\\Treinar.csproj",
+        "projectUniqueName": "C:\\Users\\Usuario\\RiderProjects\\Treinando-EF\\Treinar.csproj",
         "projectName": "Treinar",
-        "projectPath": "C:\\Users\\joaos\\RiderProjects\\Treinar\\Treinar\\Treinar.csproj",
-        "packagesPath": "C:\\Users\\joaos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\joaos\\RiderProjects\\Treinar\\Treinar\\obj\\",
+        "projectPath": "C:\\Users\\Usuario\\RiderProjects\\Treinando-EF\\Treinar.csproj",
+        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Usuario\\RiderProjects\\Treinando-EF\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\joaos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -41,6 +41,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.0-preview.6.23329.4, )"

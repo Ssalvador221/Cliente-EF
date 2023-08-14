@@ -1,49 +1,35 @@
-@model ClienteViewModel
+@model Treinar.Models.CadastroCompletoViewModel
 
-@{
-    ViewBag.Title = "Cadastro Cliente";
-}
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <title>Cadastro Cliente</title>
-</head>
-<body>
-<div>
-    <form asp-action="CadastroCliente" method="post">
-        <div class="row">
-            <div class="row">
-                <div class="col-xl-8">
-                    <div class="card" style="min-height: 409px;">
-                        <div class="card-body p-4">
-                            <div class="row">
-                                <div class="g-4  col-4">
-                                    <label asp-for="FirstName" class="control-label"></label>
-                                    <input asp-for="FirstName" class="form-control"/>
-                                    <span asp-validation-for="FirstName" class="text-danger"></span>
-                                </div>
-                                <div class="g-4  col-4">
-                                    <label asp-for="LastName" class="control-label"></label>
-                                    <input asp-for="LastName" class="form-control"/>
-                                    <span asp-validation-for="LastName" class="text-danger"></span>
-                                </div>
-                                <div class="g-4  col-4">
-                                    <label asp-for="Idade" class="control-label"></label>
-                                    <input asp-for="Idade" class="form-control"/>
-                                    <span asp-validation-for="Idade" class="text-danger"></span>
-                                </div>
-                                    <div class="g-4 col-4">
-                                    <button type="submit" class="btn btn-outline-primary">Salvar</button>
-                                    </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<form asp-action="CadastroCliente" method="post">
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="accPessoa1">
+            <button class="accordion-button" text-danger type="button" data-bs-toggle="collapse"
+                    data-bs-target="#acoor_1" aria-expanded="true"
+                    aria-controls="acoor_1">
+                ADICIONAR CLIENTE
+            </button>
+        </h2>
+        <div id="acoor_1" class="accordion-collapse collapse show" aria-labelledby="accPessoa1" data-bs-parent="#accordionlefticon">
+            <div class="accordion-body">
+                <partial name="_CadastroCliente" for="ClienteViewModel"/>
             </div>
         </div>
-    </form>
-</div>
-</body>
-</html>
+    </div>
+
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="accPessoa1">
+            <button class="accordion-button" text-danger type="button" data-bs-toggle="collapse"
+                    data-bs-target="#acoor_1" aria-expanded="true"
+                    aria-controls="acoor_1">
+                ENDEREÇO
+            </button>
+        </h2>
+        <div id="acoor_1" class="accordion-collapse collapse show" aria-labelledby="accPessoa1" data-bs-parent="#accordionlefticon">
+            <div class="accordion-body">
+                <partial name="_CepCliente" for="CepClienteViewModel"/>
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar</button>
+</form>

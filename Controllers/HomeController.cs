@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Treinar.Data.ClienteDbContext;
-using Treinar.Data.ClienteDbContext.Entidades;
 using Treinar.Models;
 
 namespace Treinar.Controllers;

@@ -9,49 +9,57 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Treinar
 build_property.RootNamespace = Treinar
-build_property.ProjectDir = C:\Users\joaos\RiderProjects\Treinar\Treinar\
+build_property.ProjectDir = C:\Users\Usuario\RiderProjects\Treinando-EF\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\joaos\RiderProjects\Treinar\Treinar
+build_property.MSBuildProjectDirectory = C:\Users\Usuario\RiderProjects\Treinando-EF
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/joaos/RiderProjects/Treinar/Treinar/Views/Cliente/CadastroCliente.cshtml]
+[C:/Users/Usuario/RiderProjects/Treinando-EF/Views/Cliente/CadastroCliente.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxDYWRhc3Ryb0NsaWVudGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/joaos/RiderProjects/Treinar/Treinar/Views/Cliente/Details.cshtml]
+[C:/Users/Usuario/RiderProjects/Treinando-EF/Views/Cliente/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/joaos/RiderProjects/Treinar/Treinar/Views/Cliente/Index.cshtml]
+[C:/Users/Usuario/RiderProjects/Treinando-EF/Views/Cliente/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/joaos/RiderProjects/Treinar/Treinar/Views/Home/Index.cshtml]
+[C:/Users/Usuario/RiderProjects/Treinando-EF/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/joaos/RiderProjects/Treinar/Treinar/Views/Home/Privacy.cshtml]
+[C:/Users/Usuario/RiderProjects/Treinando-EF/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/joaos/RiderProjects/Treinar/Treinar/Views/Shared/Error.cshtml]
+[C:/Users/Usuario/RiderProjects/Treinando-EF/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/joaos/RiderProjects/Treinar/Treinar/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Usuario/RiderProjects/Treinando-EF/Views/Shared/_CadastroCliente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9DYWRhc3Ryb0NsaWVudGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Usuario/RiderProjects/Treinando-EF/Views/Shared/_CepCliente.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9DZXBDbGllbnRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Usuario/RiderProjects/Treinando-EF/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/joaos/RiderProjects/Treinar/Treinar/Views/_ViewImports.cshtml]
+[C:/Users/Usuario/RiderProjects/Treinando-EF/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/joaos/RiderProjects/Treinar/Treinar/Views/_ViewStart.cshtml]
+[C:/Users/Usuario/RiderProjects/Treinando-EF/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/joaos/RiderProjects/Treinar/Treinar/Views/Shared/_Layout.cshtml]
+[C:/Users/Usuario/RiderProjects/Treinando-EF/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-xvlg7uaafi

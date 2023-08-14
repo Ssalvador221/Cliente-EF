@@ -1,0 +1,17 @@
+﻿@model ClienteViewModel
+
+  <div class="col-md-6">
+    <label asp-for="FirstName" class="control-label"></label>
+    <input asp-for="FirstName" class="form-control"/>
+    <span asp-validation-for="FirstName" class="text-danger"></span>
+  </div>
+  <div class="col-md-6">
+    <label asp-for="LastName" class="control-label"></label>
+    <input asp-for="LastName" class="form-control"/>
+    <span asp-validation-for="LastName" class="text-danger"></span>
+  </div>
+  <div class="col-6">
+    <label asp-for="Idade" class="control-label"></label>
+    <input asp-for="Idade" class="form-control"/>
+    <span asp-validation-for="Idade" class="text-danger"></span>
+  </div>
