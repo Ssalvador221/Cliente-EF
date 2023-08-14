@@ -1,14 +1,14 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Treinar.Data.ClienteDbContext;
+using Treinar.Mapping;
 
 var builder = WebApplication.CreateBuilder(args);
 
 var connectionString = builder.Configuration.GetConnectionString("SqlConnection");
 builder.Services.AddDbContext<ClienteDbContext>(options =>
     options.UseSqlServer(connectionString));
-
-
+builder.Services.AddSingleton(AutoMapperConfig.GetMapperConfiguration().CreateMapper());
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

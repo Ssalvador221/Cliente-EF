@@ -22,18 +22,49 @@ namespace Treinar.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Treinar.Data.ClienteDbContext.Entidades.Cliente", b =>
+            modelBuilder.Entity("Treinar.Data.Entidades.CepCliente", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("cep")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("city")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("neighborhood")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("state")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("street")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CepCliente");
+                });
+
+            modelBuilder.Entity("Treinar.Data.Entidades.Cliente", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("CepClienteId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Idade")
-                        .HasColumnType("int");
+                    b.Property<DateTime?>("Idade")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("LastName")
                         .IsRequired()
@@ -41,7 +72,18 @@ namespace Treinar.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ClienteModels", (string)null);
+                    b.HasIndex("CepClienteId");
+
+                    b.ToTable("ClienteModels");
+                });
+
+            modelBuilder.Entity("Treinar.Data.Entidades.Cliente", b =>
+                {
+                    b.HasOne("Treinar.Data.Entidades.CepCliente", "CepCliente")
+                        .WithMany()
+                        .HasForeignKey("CepClienteId");
+
+                    b.Navigation("CepCliente");
                 });
 #pragma warning restore 612, 618
         }
