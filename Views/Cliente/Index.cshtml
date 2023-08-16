@@ -9,30 +9,23 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.FirstName)
+            Primeiro Nome
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.LastName)
+            Ultimo Nome
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.IdadeDoCliente)
+            Idade Do Cliente
         </th>
         <th></th>
     </tr>
 </table>
 
-
 @foreach (var item in Model)
 {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.FirstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LastName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IdadeDoCliente)
-        </td>
-    </tr>
+    <div class="grid-container">
+        <div class="grid-item">@Html.DisplayFor(modelItem => item.FirstName)</div>
+        <div class="grid-item">@Html.DisplayFor(modelItem => item.LastName)</div>
+        <div class="grid-item">@Html.DisplayFor(modelItem => item.IdadeDoCliente)</div>
+    </div>
 }
