@@ -1,27 +1,60 @@
 ﻿@model CepClienteViewModel
 
-    <div class="col-md-6">
-        <label asp-for="Cep" class="control-label"></label>
-        <input asp-for="Cep" class="form-control"/>
-        <span asp-validation-for="Cep" class="text-danger"></span>
-    </div>
-    <div class="col-md-6">
-        <label asp-for="State" class="control-label"></label>
-        <input asp-for="State" class="form-control"/>
-        <span asp-validation-for="State" class="text-danger"></span>
-    </div>
-    <div class="col-md-6">
-        <label asp-for="City" class="control-label"></label>
-        <input asp-for="City" class="form-control"/>
-        <span asp-validation-for="City" class="text-danger"></span>
-    </div>
-    <div class="col-md-6">
-        <label asp-for="Neighborhood" class="control-label"></label>
-        <input asp-for="Neighborhood" class="form-control"/>
-        <span asp-validation-for="Neighborhood" class="text-danger"></span>
-    </div>
-    <div class="col-md-6">
-        <label asp-for="Street" class="control-label"></label>
-        <input asp-for="Street" class="form-control"/>
-        <span asp-validation-for="Street" class="text-danger"></span>
-    </div>
+<div class="col-md-6">
+    <label asp-for="Cep" class="control-label"></label>
+    <input asp-for="Cep" class="form-control" id="cepInput"/>
+    <span asp-validation-for="Cep" class="text-danger"></span>
+</div>
+<div class="col-md-6">
+    <label asp-for="State" class="control-label"></label>
+    <input asp-for="State" class="form-control" id="stateValue" readonly="readonly"/>
+    <span asp-validation-for="State" class="text-danger"></span>
+</div>
+<div class="col-md-6">
+    <label asp-for="City" class="control-label"></label>
+    <input asp-for="City" class="form-control" id="cityValue" readonly="readonly"/>
+    <span asp-validation-for="City" class="text-danger"></span>
+</div>
+<div class="col-md-6">
+    <label asp-for="Neighborhood" class="control-label"></label>
+    <input asp-for="Neighborhood" class="form-control" id="neighborhoodValue" readonly="readonly"/>
+    <span asp-validation-for="Neighborhood" class="text-danger"></span>
+</div>
+<div class="col-md-6">
+    <label asp-for="Street" class="control-label"></label>
+    <input asp-for="Street" class="form-control" id="streetValue" readonly="readonly"/>
+    <span asp-validation-for="Street" class="text-danger"></span>
+</div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  const cepInput = document.getElementById("cepInput");
+  const stateValue = document.getElementById("stateValue");
+  const cityValue = document.getElementById("cityValue");
+  const neighborhoodValue = document.getElementById("neighborhoodValue");
+  const streetValue = document.getElementById("streetValue");
+
+  cepInput.addEventListener('input', function(){
+    if(cepInput.value.length === 8){
+      const cep = cepInput.value;
+    
+      fetch(`https://brasilapi.com.br/api/cep/v1/${cep}`).then(response => {
+        if(!response.ok){
+          throw new Error("Deu RUIM!");
+        }
+        console.log(response);
+        return response.json();
+      }).then(data => {
+       stateValue.value = data.state;
+       cityValue.value = data.city;
+       neighborhoodValue.value = data.neighborhood;
+       streetValue.value = data.street;
+      })
+    }
+  });
+});
+
+
+
+</script>
